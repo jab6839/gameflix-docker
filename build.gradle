@@ -20,10 +20,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0' // ✅ explicitly add JUnit 5
 }
 
 test {
-    useJUnitPlatform()
-    enabled = false  // add this line to skip tests for now
+    useJUnitPlatform() // ✅ ensure JUnit 5 tests are picked up
+    // enabled = false  // ❌ DO NOT DISABLE TESTS
 }
-
